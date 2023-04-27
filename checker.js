@@ -11,6 +11,7 @@
 
 (function() {
     'use strict';
+    // creating an audio element to run it later
     var audio = document.createElement('audio');
     audio.src = '//upload.wikimedia.org/wikipedia/commons/4/40/Toreador_song_cleaned.ogg';
     document.body.appendChild(audio);
@@ -40,8 +41,10 @@
                 } else {
                     clearInterval(interval);
                     clearInterval(myInterval);
+                    // redirecting to a youtube video so a sound alert 
                     window.open(newPopup, "_blank");
                     newPopup = "";
+                    // playing the audio element that we created 
                     audio.play();
                     alert("there is a green spot in " + $(".k-list.k-reset#LocationId_listbox li").eq(i).text()  + " calendar");
                     return;

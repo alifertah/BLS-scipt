@@ -14,3 +14,5 @@ This script can be used on the website "[https://www.blsspainmorocco.net/mar/bls
 ## Disclaimer
 - This script is intended to be used for educational and informational purposes only. The author of this script is not responsible for any illegal use of the script or any consequences that may result from such use. Please use this script at your own risk and make sure to comply with all applicable laws and regulations.
 - Please note that this script is provided as-is and may not always work as expected. Use at your own risk.
+
+please feel free to fork the repository and submit a pull request. Your contributions can include bug fixes, feature additions, documentation updates, or anything else that you think would be valuable.
