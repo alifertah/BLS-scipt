@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
-// @author       alifertah
+// @author       You
 // @match        https://www.blsspainmorocco.net/mar/blsappointment/manageappointment
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=blsspainmorocco.net
 // @grant        none
@@ -11,7 +11,6 @@
 
 (function() {
     'use strict';
-    // creating an audio element to run it later
     var audio = document.createElement('audio');
     audio.src = '//upload.wikimedia.org/wikipedia/commons/4/40/Toreador_song_cleaned.ogg';
     document.body.appendChild(audio);
@@ -38,17 +37,15 @@
             for (var i = 0; i < linkElements.length; i++) {
                 var test = window.getComputedStyle(linkElements[i])
                 if (test.backgroundColor !== "rgb(255, 191, 0)" && test.backgroundColor !== "rgb(214, 41, 62)" && test.backgroundColor !== "rgb(116, 117, 121)" && test.backgroundColor !== "rgba(0, 0, 0, 0)") {
-                } else {
                     clearInterval(interval);
                     clearInterval(myInterval);
-                    // redirecting to a youtube video so a sound alert 
                     window.open(newPopup, "_blank");
                     newPopup = "";
-                    // playing the audio element that we created 
                     audio.play();
                     alert("there is a green spot in " + $(".k-list.k-reset#LocationId_listbox li").eq(i).text()  + " calendar");
                     return;
-                    console.log("not green")
+                } else {
+                    console.log("NO GREEN SPOT")
                 }
                 const okButton = document.querySelector('#commonModal .btn-close');
                 okButton.click();
@@ -57,6 +54,7 @@
             const okButton = document.querySelector('.btn-success');
             okButton.click();
             $(".k-list.k-reset#LocationId_listbox li").eq(item).click();
+            document.querySelector('.k-list-scroller li').click();
         }
 
         var i = 0;
