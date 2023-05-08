@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://www.blsspainmorocco.net/mar/blsappointment/manageappointment
+// @match        https://www.blsspainmorocco.net/mar/blsAppointment/ManageAppointment?data=W7WHPMK0IbmoyYuYBu6IOrdh9cCuxGnquNRVAneIBUiQqVoFAnu94Fs9J50qvq%2fGaqguwuD%2fMko1dO4nT0J013ouVku4DpdoEL1f5%2b6Li2kvRJvqgkPkfoMDha5VQjNGGNd%2fYM4P7uNkszgZWcffcCGMPHinAvS87oo1qVbl9FpOzH%2fTFUF1mEBYh%2fO3OAIxTE54ypmESwdmrzlvK%2bmnwtmWuo%2bcE0NST7nx2DSa0xXfc8S0KuP187I3lrQ2hxupNaJ%2fXEDt1KzFO7%2brw3l%2fVHdeonQVvwBEqWPjNZ7GIV8%3d
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=blsspainmorocco.net
 // @grant        none
 // ==/UserScript==
@@ -39,6 +39,10 @@
                 if (test.backgroundColor !== "rgb(255, 191, 0)" && test.backgroundColor !== "rgb(214, 41, 62)" && test.backgroundColor !== "rgb(116, 117, 121)" && test.backgroundColor !== "rgba(0, 0, 0, 0)") {
                     clearInterval(interval);
                     clearInterval(myInterval);
+                    test.click()
+                    document.querySelectorAll(".k-widget.k-dropdown.form-control").click();
+                    document.querySelector("#Mobile").value="0658189660";
+                    document.querySelector("#Email").value="test@test.com"
                     window.open(newPopup, "_blank");
                     newPopup = "";
                     audio.play();
@@ -73,5 +77,25 @@
             clearInterval(myInterval);
         }
     }, 5000);
+
+
+     console.log("code start")
+    var time = 1000;
+    const titles = ['504 Gateway Time-out','403 Forbidden', 'Problem loading page','503 Service Temporarily Unavailable','Service Unavailable','500 Internal Server Error','Database error','FastCGI Error','The connection has timed out','Problemas al cargar la página','Error 502 (Server Error)!!1'];
+    const HeadingText = ['502 Bad Gateway','Service Unavailable','403 ERROR','Error 503 Service Unavailable','404 Not Found','504 Gateway Time-out','This page isn’t working'];
+    const myBody = ['Scheduled maintenance is under progress'];
+    var myTitle = document.title;
+
+    if(document.body.childElementCount <= 1 || titles.includes(myTitle)){
+        console.log("code here")
+        setTimeout(function() {
+                window.location.reload(true);
+            }, time);
+    }else if(( HeadingText.includes(document.getElementsByTagName('h1')[0].innerText))){
+        setTimeout(function() {
+                window.location.reload(true);
+            }, time);
+    }
+    console.log("End of code")
 
 })();
